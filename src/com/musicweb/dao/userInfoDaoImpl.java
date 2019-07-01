@@ -10,7 +10,6 @@ public class userInfoDaoImpl implements userInfoDao{
 	@Override
 	public boolean getUser(int userId) {
 		Session session = HibernateSessionFactory.getSession();
-		session.get(user, id)
 		
 		return false;
 	}

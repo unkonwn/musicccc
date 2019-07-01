@@ -24,7 +24,7 @@ public class showUsersAction {
 		
 
 		JsonResult jsonResult = new JsonResult();	
-		out.print(gson.toJson());
+		//out.print(gson.toJson());
 		return null;
 	}
 }
