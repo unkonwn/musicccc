@@ -20,12 +20,18 @@
                     $("#more").text("展示")
                 $("#flag_more").toggle();
             });
+            $("#playerBtn").click(function () {
+                $(window.parent.document).find("#playerBar").animate({
+                    height:'50px'
+                },1000)
+                $(window.parent.document).find("#audio")[0].play()
+            })
 
         })
     </script>
 </head>
 
-<body >
+<body>
 
 
 <div class="container"
@@ -223,9 +229,6 @@
         </ul>
     </div>
 </div>
-
-
-
 
 
 </body>

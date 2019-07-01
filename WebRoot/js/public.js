@@ -22,11 +22,6 @@ $(document).ready(function() {
 			$(".modal-body").find("form").append(formGroup)
 	})
 
-	$("#playerBtn").click(
-
-		function () {
-
-	})
 
 	$("#mouseBlock").mouseover(
 		function(){

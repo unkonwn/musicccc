@@ -13,21 +13,35 @@
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <script type="text/javascript" src="../js/public.js"></script>
     <link rel="stylesheet" href="../layui/css/layui.css?t=1560414887305" media="all">
-
-
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <script src="../layui/layui.js" charset="utf-8"></script>
     <script>
+        layui.use('element', function () {
+
+        });
+    </script>
+    <script>
+
         $(document).ready(function () {
 
-            // $("#musicBar").addClass("active")
+            // var course = "<div class=\"course\">\n" +
+            //     "                        <img src=\"../img/3.jpg\"/>\n" +
+            //     "                        <a class=\"btn btn-default\" href=\"#\">最火音乐</a>\n" +
+            //     "                    </div>"
+            // $(".layui-tab-item").append(course)
 
             $('.carousel').carousel({
                 interval: 2000
             })
-            $(".list-group-item").children().attr({target:"content",
-                href:"player.html"})
+            $(".list-group-item").children().attr({
+                target: "content",
+                href: "player.html"
+            })
 
-            $(".btn.btn-default").attr({target:"content",
-                href:"player.html"})
+            $(".btn.btn-default").attr({
+                target: "content",
+                href: "player.html"
+            })
         });
     </script>
 
@@ -71,46 +85,57 @@
     <!--图片轮播器-->
 
     <div class="content col-md-12" style="background-color: #ffffff;">
-        <!--tab切换-->
-        <div class="col-md-12" id="courseList">
-            <ul class="nav nav-tabs">
-                <li class="active" id="hot">
-                    <a>热门推荐</a>
-                </li>
-                <li id="ChineseMusic">
-                    <a>华语音乐</a>
-                </li>
-                <li id="foreignMusic">
-                    <a>欧美音乐</a>
-                </li>
+
+        <div class="layui-tab">
+
+            <ul class="layui-tab-title">
+                <li class="layui-this">热门推荐</li>
+                <li>华语音乐</li>
+                <li>欧美音乐</li>
+                <li>商品管理</li>
+                <li>订单管理</li>
             </ul>
-            <div class="row singalCourseList">
-                <div class="col-md-3">
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show" >
+                    <div class="course" style="width: 25%;">
+                        <img src="../img/3.jpg">
+                        <a class="btn btn-default" href="player.html" target="content">最火音乐</a>
+                    </div>
                     <div class="course">
-                        <img src="../img/3.jpg"/>
-                        <a class="btn btn-default" href="#">最火音乐</a>
+                        <img src="../img/3.jpg">
+                        <a class="btn btn-default" href="player.html" target="content">最火音乐</a>
+                    </div>
+                    <div class="course">
+                        <img src="../img/3.jpg">
+                        <a class="btn btn-default" href="player.html" target="content">最火音乐</a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="course">
-                        <img src="../img/3.jpg"/>
-                        <a class="btn btn-default" href="#">最火音乐</a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="course">
-                        <img src="../img/3.jpg"/>
-                        <a class="btn btn-default" href="#">最火音乐</a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="course">
-                        <img src="../img/3.jpg"/>
-                        <a class="btn btn-default" href="#">最火音乐</a>
-                    </div>
-                </div>
+                <div class="layui-tab-item" ></div>
+                <div class="layui-tab-item"></div>
+                <div class="layui-tab-item"></div>
+                <div class="layui-tab-item"></div>
             </div>
+
         </div>
+
+
+        <!--tab切换-->
+        <!--<div class="col-md-12" id="courseList">-->
+            <!--<ul class="nav nav-tabs">-->
+                <!--<li class="active" id="hot">-->
+                    <!--<a>热门推荐</a>-->
+                <!--</li>-->
+                <!--<li id="ChineseMusic">-->
+                    <!--<a>华语音乐</a>-->
+                <!--</li>-->
+                <!--<li id="foreignMusic">-->
+                    <!--<a>欧美音乐</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+            <!--<div class="row singalCourseList">-->
+
+            <!--</div>-->
+        <!--</div>-->
         <!--tab切换-->
 
         <!--榜单-->
