@@ -19,8 +19,8 @@ public class AttributeValue extends AbstractAttributeValue implements java.io.Se
 	}
 
 	/** full constructor */
-	public AttributeValue(String attributeName, Set musicInformations) {
-		super(attributeName, musicInformations);
+	public AttributeValue(String attributeName, Set musics) {
+		super(attributeName, musics);
 	}
 
 }

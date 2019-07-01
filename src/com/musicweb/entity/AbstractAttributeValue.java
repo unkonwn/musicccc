@@ -14,7 +14,7 @@ public abstract class AbstractAttributeValue implements java.io.Serializable {
 
 	private Integer attributeId;
 	private String attributeName;
-	private Set musicInformations = new HashSet(0);
+	private Set musics = new HashSet(0);
 
 	// Constructors
 
@@ -28,9 +28,9 @@ public abstract class AbstractAttributeValue implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public AbstractAttributeValue(String attributeName, Set musicInformations) {
+	public AbstractAttributeValue(String attributeName, Set musics) {
 		this.attributeName = attributeName;
-		this.musicInformations = musicInformations;
+		this.musics = musics;
 	}
 
 	// Property accessors
@@ -51,12 +51,12 @@ public abstract class AbstractAttributeValue implements java.io.Serializable {
 		this.attributeName = attributeName;
 	}
 
-	public Set getMusicInformations() {
-		return this.musicInformations;
+	public Set getMusics() {
+		return this.musics;
 	}
 
-	public void setMusicInformations(Set musicInformations) {
-		this.musicInformations = musicInformations;
+	public void setMusics(Set musics) {
+		this.musics = musics;
 	}
 
 }

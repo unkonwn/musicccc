@@ -13,11 +13,11 @@
         <property name="attributeName" type="java.lang.String">
             <column name="attribute_name" not-null="true" />
         </property>
-        <set name="musicInformations" inverse="true" table="music_attribute" catalog="music">
+        <set name="musics" inverse="true" table="music_attribute" catalog="music">
             <key>
                 <column name="attribute_id" not-null="true" />
             </key>
-            <many-to-many entity-name="com.musicweb.entity.MusicInformation">
+            <many-to-many entity-name="com.musicweb.entity.Music">
                 <column name="music_id" not-null="true" />
             </many-to-many>
         </set>

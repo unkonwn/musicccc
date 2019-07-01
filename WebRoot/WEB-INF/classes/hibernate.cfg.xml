@@ -30,6 +30,12 @@
 		<mapping resource="com/musicweb/entity/PicInformation.hbm.xml" />
 		<mapping
 			resource="com/musicweb/entity/MusiclistInformation.hbm.xml" />
+		<mapping resource="com/musicweb/entity/Pic.hbm.xml" />
+		<mapping resource="com/musicweb/entity/User.hbm.xml" />
+		<mapping resource="com/musicweb/entity/Singer.hbm.xml" />
+		<mapping resource="com/musicweb/entity/Music.hbm.xml" />
+		<mapping resource="com/musicweb/entity/Musiclist.hbm.xml" />
+		<mapping resource="com/musicweb/entity/Comment.hbm.xml" />
 
 	</session-factory>
 
