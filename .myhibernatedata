@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Mon Jul 01 10:08:50 CST 2019
+reStrategyClass=
+detectM2M=true
+createConfigFile=true
+reSettingsFile=
+profile=
+keyGenerator=
+genAnnotations=false
+detectO2O=true
+useJavaTypes=true
+sessionFactoryId=
+jndiPath=
+springDaoFile=
+basePersistenceClass=
+configFile=/yunMusicWeb/src/hibernate.cfg.xml
+daoSFId=
+sessionFactoryName=com.musicweb.util.HibernateSessionFactory
+genBasicCompId=true
+genVersionTag=true
