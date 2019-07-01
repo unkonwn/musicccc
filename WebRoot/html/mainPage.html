@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<!--<html><head></head><body></body></html>-->
+<html xmlns="http://www.w3.org/1999/xhtml" class="g_html">
+
+<head>
+    <title>mainPage</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <link type="text/css" href="../css/bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/myPro.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <link rel="stylesheet" href="../layui/css/layui.css?t=1560414887305" media="all">
+
+
+    <script>
+        $(document).ready(function () {
+
+            // $("#musicBar").addClass("active")
+
+            $('.carousel').carousel({
+                interval: 2000
+            })
+            $(".list-group-item").children().attr({target:"content",
+                href:"player.html"})
+
+            $(".btn.btn-default").attr({target:"content",
+                href:"player.html"})
+        });
+    </script>
+
+</head>
+
+<body>
+
+<!--主题内容-->
+<div class="container" style="background-color: #ffffff;">
+
+    <!--图片轮播器-->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="http://p1.music.126.net/QsD_BueoQ8R2aGBH_DorIQ==/109951164150027552.jpg" alt="...">
+
+            </div>
+            <div class="item">
+                <img src="http://p1.music.126.net/utuDrsyMmk1ldfX4BXtPRw==/109951164150000828.jpg" alt="...">
+
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+    </div>
+    <!--图片轮播器-->
+
+    <div class="content col-md-12" style="background-color: #ffffff;">
+        <!--tab切换-->
+        <div class="col-md-12" id="courseList">
+            <ul class="nav nav-tabs">
+                <li class="active" id="hot">
+                    <a>热门推荐</a>
+                </li>
+                <li id="ChineseMusic">
+                    <a>华语音乐</a>
+                </li>
+                <li id="foreignMusic">
+                    <a>欧美音乐</a>
+                </li>
+            </ul>
+            <div class="row singalCourseList">
+                <div class="col-md-3">
+                    <div class="course">
+                        <img src="../img/3.jpg"/>
+                        <a class="btn btn-default" href="#">最火音乐</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="course">
+                        <img src="../img/3.jpg"/>
+                        <a class="btn btn-default" href="#">最火音乐</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="course">
+                        <img src="../img/3.jpg"/>
+                        <a class="btn btn-default" href="#">最火音乐</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="course">
+                        <img src="../img/3.jpg"/>
+                        <a class="btn btn-default" href="#">最火音乐</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--tab切换-->
+
+        <!--榜单-->
+        <div class="col-md-12">
+            <div class="page-header" style="color: orangered;">
+                <h4>榜单</h4>
+            </div>
+            <div class="panel panel-default col-md-4 panerHead">
+                <!-- Default panel contents -->
+                <div class="panel-heading row">
+                    <div class="col-md-8 pad0">
+                        <img src="../img/p.jpg"/>
+                    </div>
+                    <div class="col-md-4">
+                        <p>
+                            新歌榜
+                        </p>
+                    </div>
+                </div>
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="">Cras justo odio</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Dapibus ac facilisis in</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Morbi leo risus</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Porta ac consectetur ac</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Vestibulum at eros</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel panel-default col-md-4 panerHead">
+                <!-- Default panel contents -->
+                <div class="panel-heading row">
+                    <div class="col-md-8 pad0">
+                        <img src="../img/p.jpg"/>
+                    </div>
+                    <div class="col-md-4">
+                        <p>
+                            老歌榜
+                        </p>
+                    </div>
+                </div>
+
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="">Cras justo odio</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Dapibus ac facilisis in</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Morbi leo risus</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Porta ac consectetur ac</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Vestibulum at eros</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel panel-default col-md-4 panerHead">
+                <!-- Default panel contents -->
+                <div class="panel-heading row">
+                    <div class="col-md-8 pad0">
+                        <img src="../img/p.jpg"/>
+                    </div>
+                    <div class="col-md-4">
+                        <p>
+                            明星榜
+                        </p>
+                    </div>
+                </div>
+
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="">Cras justo odio</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Dapibus ac facilisis in</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Morbi leo risus</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Porta ac consectetur ac</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a>Vestibulum at eros</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--榜单-->
+
+        </div>
+
+    </div>
+</div>
+
+<!--主题内容-->
+
+</body>
+
+</html>
