@@ -24,11 +24,11 @@
 
         $(document).ready(function () {
 
-            // var course = "<div class=\"course\">\n" +
-            //     "                        <img src=\"../img/3.jpg\"/>\n" +
-            //     "                        <a class=\"btn btn-default\" href=\"#\">最火音乐</a>\n" +
-            //     "                    </div>"
-            // $(".layui-tab-item").append(course)
+            var course = "<div class=\"course layui-col-md3\" style=\"text-align: center\">\n" +
+                "                        <img src=\"../img/3.jpg\" style=\"width:100%;height:auto;\">\n" +
+                "                        <a class=\"btn btn-default\" href=\"player.html\" target=\"content\">最火音乐</a>\n" +
+                "                    </div>"
+            $(".layui-tab-item").append(course,course,course,course)
 
             $('.carousel').carousel({
                 interval: 2000
@@ -50,7 +50,7 @@
 <body>
 
 <!--主题内容-->
-<div class="container" style="background-color: #ffffff;">
+<div class="container" style="border-top: none; border-bottom: none; background-color: #ffffff;">
 
     <!--图片轮播器-->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -92,28 +92,12 @@
                 <li class="layui-this">热门推荐</li>
                 <li>华语音乐</li>
                 <li>欧美音乐</li>
-                <li>商品管理</li>
-                <li>订单管理</li>
             </ul>
             <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show" >
-                    <div class="course" style="width: 25%;">
-                        <img src="../img/3.jpg">
-                        <a class="btn btn-default" href="player.html" target="content">最火音乐</a>
-                    </div>
-                    <div class="course">
-                        <img src="../img/3.jpg">
-                        <a class="btn btn-default" href="player.html" target="content">最火音乐</a>
-                    </div>
-                    <div class="course">
-                        <img src="../img/3.jpg">
-                        <a class="btn btn-default" href="player.html" target="content">最火音乐</a>
-                    </div>
+                <div class="layui-tab-item layui-show layui-row layui-col-space20">
                 </div>
-                <div class="layui-tab-item" ></div>
-                <div class="layui-tab-item"></div>
-                <div class="layui-tab-item"></div>
-                <div class="layui-tab-item"></div>
+                <div class="layui-tab-item layui-row layui-col-space20"></div>
+                <div class="layui-tab-item layui-row layui-col-space20"></div>
             </div>
 
         </div>
@@ -121,20 +105,20 @@
 
         <!--tab切换-->
         <!--<div class="col-md-12" id="courseList">-->
-            <!--<ul class="nav nav-tabs">-->
-                <!--<li class="active" id="hot">-->
-                    <!--<a>热门推荐</a>-->
-                <!--</li>-->
-                <!--<li id="ChineseMusic">-->
-                    <!--<a>华语音乐</a>-->
-                <!--</li>-->
-                <!--<li id="foreignMusic">-->
-                    <!--<a>欧美音乐</a>-->
-                <!--</li>-->
-            <!--</ul>-->
-            <!--<div class="row singalCourseList">-->
+        <!--<ul class="nav nav-tabs">-->
+        <!--<li class="active" id="hot">-->
+        <!--<a>热门推荐</a>-->
+        <!--</li>-->
+        <!--<li id="ChineseMusic">-->
+        <!--<a>华语音乐</a>-->
+        <!--</li>-->
+        <!--<li id="foreignMusic">-->
+        <!--<a>欧美音乐</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--<div class="row singalCourseList">-->
 
-            <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
         <!--tab切换-->
 
