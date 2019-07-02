@@ -11,23 +11,70 @@
 		<script type="text/javascript" src="../js/jquery-2.1.0.js"></script>
 		<script type="text/javascript" src="../js/bootstrap.js"></script>
 		<script type="text/javascript" src="../js/public.js"></script>
+		<script src="../layui/layui.js?t=1560414887305"></script>
+		<link rel="stylesheet" href="../layui/css/layui.css?t=1560414887305" media="all">
 
 		<script>
-			$(document).ready(function () {
 
-				document.onreadystatechange = function () {
-					if(document.readyState === "complete") {
+		$(function () {
+			layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function(){
+				var laypage = layui.laypage //分页
+						,layer = layui.layer //弹层
+						,table = layui.table //表格
 
+
+				//执行一个 table 实例
+				table.render({
+					elem: '#demo'
+					,height: 420
+					,url: 'user.json' //数据接口
+					,title: '用户表'
+					,page: true //开启分页
+					// ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+					// ,totalRow: true //开启合计行
+					,cols: [[ //表头
+						// {type: 'checkbox', fixed: 'left'}
+						{field: 'username', title: '歌曲名', width:"20%",sort:true,align:"center"}
+						,{field: 'experience', title: '歌手', width:"20%",align:"center"}
+						,{field: 'sex', title: '时长', width:"20%",align:"center"}
+						,{field: 'score', title: '专辑', width:"20%",align:"center"}
+						,{fixed: 'right', width:"20%", align:'center', toolbar: '#barDemo'}
+					]]
+				});
+
+
+				//监听行工具事件
+				table.on('tool(test)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+					var data = obj.data //获得当前行数据
+							,layEvent = obj.event; //获得 lay-event 对应的值
+					if(layEvent === 'cancelLike'){
+						layer.msg(data.id);
 					}
-				}
+				});
+
+
+				//分页
+				laypage.render({
+					elem: 'pageDemo' //分页容器的id
+					,count: 100 //总页数
+					,skin: '#1E9FFF' //自定义选中色值
+					//,skip: true //开启跳页
+					,jump: function(obj, first){
+						if(!first){
+							layer.msg('第'+ obj.curr +'页', {offset: 'b'});
+						}
+					}
+				});
+
 			});
+		})
+
 		</script>
-		
+
+
 	</head>
 
 	<body>
-
-
 		<!--主体部分-->
 		<div class="container" style="width: 990px; border-color: #a9a9a9; border-style: solid; border-width: 1px; border-top: none; border-bottom: none; background-color: #ffffff;">
 			<div class="row" style="margin-left: 10px; margin-right: 10px;">
@@ -54,132 +101,15 @@
 				<div class="page-header">
 					<p style="color: red;font-size: 20px;font-weight: 600;">我的收藏</p>
 				</div>
-				<div class="col-md-12">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>
-									歌曲名
-								</th>
-								<th>
-									时长
-								</th>
-								<th>
-									歌手名
-								</th>
-								<th>
-									专辑
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<a href="#">第一首歌</a>
-								</td>
-								<td>3`12`</td>
-								<td>
-									<a href="#">小明</a>
-								</td>
-								<td>
-									<a href="#">某专辑</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#">第一首歌</a>
-								</td>
-								<td>3`12`</td>
-								<td>
-									<a href="#">小明</a>
-								</td>
-								<td>
-									<a href="#">某专辑</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#">第一首歌</a>
-								</td>
-								<td>3`12`</td>
-								<td>
-									<a href="#">小明</a>
-								</td>
-								<td>
-									<a href="#">某专辑</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<a href="#">夜空中最暗的星</a>
-								</td>
-								<td>3`12`</td>
-								<td>
-									<a href="#">张杰</a>
-								</td>
-								<td>
-									<a href="#">某专辑</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					</table>
-				</div>
-				<nav aria-label="..." class="pull-right" style="margin-bottom:25px; margin-right: 10px;">
-					<ul class="pagination">
-						<li class="disabled">
-							<span>
-        						<span aria-hidden="true">&laquo;</span>
-							</span>
-						</li>
-						<li class="active">
-							<span>1 <span class="sr-only">(current)</span></span>
-						</li>
-						<li>
-							<span>2 <span class="sr-only">(current)</span></span>
-						</li>
-						<li>
-							<span>3 <span class="sr-only">(current)</span></span>
-						</li>
-						<li>
-							<span>4 <span class="sr-only">(current)</span></span>
-						</li>
-						<li class="disabled">
-							<span>
-        						<span aria-hidden="true">&raquo;</span>
-							</span>
-						</li>
+				<!--收藏歌曲列表-->
+				<table class="layui-hide" id="demo" lay-filter="test" ></table>
 
-					</ul>
-				</nav>
+				<script type="text/html" id="barDemo">
+					<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="cancelLike">取消收藏</a>
+				</script>
 			</div>
 		</div>
-		<!--主体部分-->
 
-		<!--&lt;!&ndash;站位元素&ndash;&gt;-->
-		<!--<div class="container" id="mouseBlock" style="height: 50px;width: 100%;z-index: 100;position: fixed;bottom: 0px;opacity: 100% ">-->
-		<!--</div>-->
-		<!--&lt;!&ndash;音乐播放条&ndash;&gt;-->
-		<!--<div class="container" id="playerBar" style="height: 0px;width: 100%;z-index: 100;position: fixed;bottom: 0px;background-color: #9e191a">-->
-			<!--&lt;!&ndash;<div class="col-md-2"></div>&ndash;&gt;-->
-			<!--<div class="col-md-1" style="margin-left: 150px;margin-right: 10px;width: 10%;padding-top: 10px">-->
-				<!--<img  src="../img/last.png" style="width: 30px;height: 30px;border-radius: 50%;"/>-->
-				<!--<img src="../img/next.png" style="width: 30px;height: 30px;border-radius: 50%;margin-left: 10px"/>-->
-			<!--</div>-->
-			<!--<div class="col-md-6">-->
-				<!--<img src="http://p2.music.126.net/R4ZP3AJ9xV0vvw8LX7AbMA==/109951163860425334.jpg?param=130y130"-->
-					 <!--style="width: 30px;height: 30px;margin-bottom: 30px;margin-right: 10px"/>-->
-				<!--<audio controls style="height: 40px;width: 450px;margin-top: 5px">-->
-					<!--<source src="../0312943ea3d8cba0b6bc8f64e4478759.mp3" >-->
-				<!--</audio>-->
-			<!--</div>-->
-			<!--<div class="col-md-1" style="padding-top: 10px;">-->
-				<!--<button class="btn btn-default">-->
-					<!--播放列表-->
-				<!--</button>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--&lt;!&ndash;音乐播放条&ndash;&gt;-->
 
 	</body>
 
